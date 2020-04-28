@@ -1,0 +1,27 @@
+ul.projects {
+  list-style: none;
+  margin-left: 1em;
+  overflow: hidden;
+  padding: 0;
+}
+ul.projects li {
+  float: left;
+}
+
+ul.projects li a {
+  position: relative;
+  display: inline-block;
+
+  height: 26px;
+  padding: 5px 30px;
+  margin: 0 15px 15px 0;
+
+  border-radius: 3px;
+  line-height: 26px;
+
+  background: #8b6e1d;
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 600;
+}

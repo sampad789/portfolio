@@ -1,0 +1,26 @@
+ul.skills {
+  list-style: none;
+  margin-left: 1em;
+  overflow: hidden;
+  padding: 0;
+}
+
+.skills li {
+  float: left;
+}
+.skills li a {
+  position: relative;
+  display: inline-block;
+
+  height: 30px;
+  padding: 5px 30px;
+  margin: 0 25px 25px 0;
+
+  border-radius: 3px;
+  line-height: 26px;
+  background: #a17c17;
+  color: #fff;
+
+  font-size: 25px;
+  font-weight: 600;
+}
