@@ -1,50 +1,46 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-import './Projects.css';
+import "./Projects.css";
 
-const projects =[
-    {name :"Rick and Morty Character Info (React) ",
-        url :"https://github.com/sampad789/RickandMortyCharacterCards"
-    },
-    {
-        name : "Message Board (React) ",
-        url :" https://github.com/sampad789/reactApp-"
-    },
-    {
-        name :"Daily  Horoscope Cards (React)",
-        url :"https://github.com/sampad789/React_Horoscope_materialui-"
-    },
-    {
-        name :"Simple Idea list (Express & Mongodb)",
-        url :"https://github.com/sampad789/expresssBackend_Mongodb"
-    },
-    {
-        name : "Bootstrap Cheat Sheet (CSS)",
-        url :"https://github.com/sampad789/bootstrap_cheatsheet"
-    },
-    {
-        name :"Fortnite Stats & Latest News(React Native)",
-        url :"https://github.com/sampad789/Fortnite-stats-landing"
-    },
-    {
-        name :"Simple Music Forum (Spring Boot)",
-        url :"https://github.com/sampad789/musicForum"
-    }
+const Projects = () => {
+  // Using React Hooks
+  const [repos, setRepos] = useState([]);
 
-] 
+  useEffect(() => {
+    getallReposName();
+  }, []);
 
-const Projects = () =>(
+  const getallReposName = () => {
+    axios
+      .get(`https://api.github.com/users/sampad789/repos`)
+      .then((res) => {
+        setRepos(res.data);
+      })
+      .catch(function(error) {
+        // handle error
+        console.log("Error on fetch");
+      });
+  };
+
+  //console.log(repos);
+
+  return (
     <ul className="projects">
-   {projects.map((project,i)=>(
-       <li key = {project.name}>
-       <a target ="_blank" rel ="noopener noreferrer" title={project.name} href={project.url}>
-       {project.name}
-       </a>
-       </li>
-
-    ))}
-
+      {repos.map((repos, i) => (
+        <li key={repos.name}>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            title={repos.name}
+            href={repos.html_url}
+          >
+            {repos.name}
+          </a>
+        </li>
+      ))}
     </ul>
-)
+  );
+};
 
 export default Projects;
