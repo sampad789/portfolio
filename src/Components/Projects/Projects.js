@@ -28,11 +28,11 @@ const Projects = () => {
   return (
     <ul className="projects">
       {repos.map((repos, i) => (
-        <li key={repos.name}>
+        <li key={repos.description}>
           <a
             target="_blank"
             rel="noopener noreferrer"
-            title={repos.name}
+            title={repos.description}
             href={repos.html_url}
           >
             {repos.name}
