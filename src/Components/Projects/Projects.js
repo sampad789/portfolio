@@ -13,7 +13,7 @@ const Projects = () => {
 
   const getallReposName = () => {
     axios
-      .get(`https://api.github.com/users/sampad789/repos`)
+      .get(`https://api.github.com/users/sampad789/repos?per_page=100`)
       .then((res) => {
         setRepos(res.data);
       })

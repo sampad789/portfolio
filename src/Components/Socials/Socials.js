@@ -1,6 +1,6 @@
 import React from "react";
 import "./Social.css";
-
+import cv from "./assets/samResume2022.pdf";
 const socials = [
   {
     name: "linkedin",
@@ -15,7 +15,7 @@ const socials = [
   {
     name: "CV",
     icon: "fas fa-file",
-    url: "./assets/cv.pdf",
+    url: cv,
   },
 ];
 
